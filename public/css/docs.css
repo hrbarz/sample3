@@ -1,0 +1,132 @@
+/* Add additional stylesheets below
+-------------------------------------------------- */
+/*
+  Bootstrap's documentation styles
+  Special styles for presenting Bootstrap's documentation and examples
+*/
+
+
+
+/* Body and structure
+-------------------------------------------------- */
+html, body { height: 100%; }
+
+body {
+  background: #353B1A;
+  position: relative;
+  padding-top: 40px;
+
+}
+
+.head{
+  background: #D94436;
+  height: 12px;
+}
+.container{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 13px;
+}
+.container h1{
+  font-family: 'Lobster', cursive;
+  color: white;
+  font-size: 40px;
+  font-weight: normal;
+  background: url('../img/logo.jpg') no-repeat 210px ;
+}
+
+.bgp3{
+  background: #FD2F2F;
+}
+.bgp2{
+  background: #FF8600;
+}
+.bgp1{
+  background: #009999;
+}
+.bgp0{
+  background: #009933;
+}
+.home-list-pending{
+  margin-top: 40px;
+  clear: both;
+}
+.home-list-pending ul{
+  list-style: none;
+  display: block;
+  float: right;
+
+
+}
+.home-list-pending li{
+  margin: 8px;
+  font-family: Tahoma;
+  font-size: 64px;
+  color: white;
+  float: left;
+  width: 94px;
+  height: 75px;
+  padding-top: 13px;
+  text-align: center;
+  line-height: 53px; 
+  vertical-align:middle;
+}
+
+.home-list-task{
+  padding-top: 30px;
+  clear: both;
+  color: white;
+}
+
+.home-list-task ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.home-list-task li{
+  padding-left: 7px;
+  list-style: none;
+  border-bottom: 1px solid #C8B16C;
+  padding-top:20px;
+}
+
+.home-list-task h2{
+  font-family: Tahoma;
+  font-size: 23px;
+  font-weight: normal;
+}
+
+
+.home-list-task-pending{
+  float:right;
+}
+.home-list-task-pending ul{
+  list-style: none;
+  display: block;
+  float: right;
+}
+.home-list-task-pending li{
+  border:none;
+  margin: 3px;
+  margin-bottom: 0px;
+  font-family: Tahoma;
+  font-size: 20px;
+  color: white;
+  float: left;
+
+  padding: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  text-align: center;
+  line-height: 15px; 
+  vertical-align:middle;
+}
+
+
+@media (max-width: 767px) {
+  body {
+    padding: 0;
+  }
+}
