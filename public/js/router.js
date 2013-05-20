@@ -7,7 +7,9 @@ define([
 ], function ($, _, Backbone, Vm) {
   var AppRouter = Backbone.Router.extend({
     routes: {
-      '*actions': 'defaultAction' // All urls will trigger this route
+      ''              : 'viewPageHome',
+      'home'          : 'viewPageHome',
+      'tasklist/:id'  : 'viewPageTasklist'
     }
   });
 
@@ -17,8 +19,7 @@ define([
     
     var router = new AppRouter(options);
 
-		router.on('route:defaultAction', function (actions) {
-      
+		router.on('route:viewPageHome', function () {
 
       require(['views/homeView'], function (ViewPage) {
       
@@ -27,13 +28,22 @@ define([
         viewPage.render();
       
       });
-
-			/*require(['views/dashboard/page'], function (DashboardPage) {
-        var dashboardPage = Vm.create(appView, 'DashboardPage', DashboardPage);
-        dashboardPage.render();
-      });*/
 		
     });
+
+    router.on('route:viewPageTasklist', function (id) {
+      
+      require(['views/tasklistView'], function (ViewPage) {
+      
+        var viewPage = Vm.create(appView, 'ViewPage', ViewPage);
+      
+        viewPage.render(id);
+      
+      });
+    
+    });
+
+
     
   };
   return {

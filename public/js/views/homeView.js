@@ -49,7 +49,7 @@ define([
                         
                        _.each(data,function(val){
                          
-                          $(that.el_list_task).append( _.template(homeTasksTemplate,{task:val}) );
+                          $(that.el_list_task).append( _.template(homeTasksTemplate,{tasklist:val}) );
 
                           taskCollection.get_count_priority(val._id,function(data){
 

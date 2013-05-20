@@ -20,14 +20,14 @@ body {
 
 .head{
   background: #D94436;
-  height: 12px;
+  padding-bottom:2px;
 }
 .container{
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 13px;
 }
-.container h1{
+.p-home h1{
   font-family: 'Lobster', cursive;
   color: white;
   font-size: 40px;
@@ -78,25 +78,28 @@ body {
   color: white;
 }
 
-.home-list-task ul{
+.home-list-task ul, .tasklist-list-task ul{
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.home-list-task li{
+.home-list-task .items-tasklist, .tasklist-list-task .items-tasklist{
   padding-left: 7px;
   list-style: none;
   border-bottom: 1px solid #C8B16C;
   padding-top:20px;
 }
 
-.home-list-task h2{
+.home-list-task h2, .tasklist-list-task h2{
   font-family: Tahoma;
   font-size: 23px;
   font-weight: normal;
 }
 
+.home-list-task h2 a, .tasklist-list-task h2 a{
+  color: white;
+}
 
 .home-list-task-pending{
   float:right;
@@ -124,6 +127,116 @@ body {
   vertical-align:middle;
 }
 
+#collapseMenu{
+  margin-left: 0
+
+}
+
+#collapseMenu li{
+  color: white;
+  margin-top: 5px;
+}
+
+#collapseMenu li a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+#collapseMenu li a:hover, #collapseMenu li a:active{
+  background: #E4786E;
+}
+
+
+.p-tasklits h1{
+  font-family: 'Lobster', cursive;
+  color: white;
+  font-size: 30px;
+  font-weight: normal;
+  background: url('../img/logo.jpg') no-repeat 210px ;
+}
+
+.tasklist-list-task{
+  padding-top: 0px;
+  clear: both;
+  color: white;
+}
+
+.pb3{
+  border: 2px solid #F78888;
+  background: #FDE3E3;
+}
+
+.pb2{
+  border: 2px solid #FFA540;
+  background: #FEECD3;
+}
+
+.pb1{
+  border: 2px solid #00CCCC;
+  background: #EAF3F7;
+}
+
+.pb0{
+  border: 2px solid #37AA00;
+  background: #EBFFE1;
+}
+
+.tasklist-list-task .block-priority{
+  margin-top:20px;
+  padding: 15px;
+}
+
+.block-priority .new-task-block{
+  border: none;
+  border-bottom: 2px dashed #999;
+  margin-bottom: 15px;
+}
+
+.block-priority .new-task-block input{
+  width: 100%;
+  border: 0;
+  background: none;
+  font-size: 17px;
+  padding-bottom: 5px;
+}
+
+.block-priority .list-task-unchecked li, .block-priority .list-task-checked li{
+  margin-bottom: 10px;
+  clear: both;
+}
+
+.action-check, .text-check, .comment-check, .text-checked{
+  display:inline-block;
+  position: relative;
+  padding-right: 9px;  
+}
+
+.comment-check{
+  color: #999;
+  font-size: 12px;
+}
+.comment-check:hover{
+  text-decoration: none;
+}
+.text-checked{
+  text-decoration: line-through;
+}
+
+
+.block-priority .btn-task-checked{
+  display: block;
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.block-priority .btn-task-checked:hover{
+  text-decoration: none;
+}
 
 @media (max-width: 767px) {
   body {

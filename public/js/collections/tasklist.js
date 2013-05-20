@@ -9,8 +9,26 @@ define([
         
         model: TasklistModel,
         
-        url: '/tasklist'
-        
+        url: '/tasklist',
+
+        get_tasks_finished: function(idtasklist,callback){
+
+            var that = this;
+
+            $.ajax({
+               
+                url: that.url + '/tasks/'+ idtasklist ,
+
+                data: {status:'finish'},
+
+                success: function(data){
+
+                    callback(data);
+
+                }
+
+            });
+        }        
     });
 
   return Tasklist;

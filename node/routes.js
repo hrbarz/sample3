@@ -21,7 +21,12 @@ module.exports = function(server){
 
 
     server.get(
-        '/tasklist',    tasklist.list); 
+        '/tasklist',    tasklist.list);
+
+    server.get(
+        '/tasklist/tasks/:id',tasklist.task_by_id);
+
+
 
     
     server.get(

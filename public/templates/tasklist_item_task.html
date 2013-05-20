@@ -1,0 +1,14 @@
+<li>                  
+  <% if(task.status == 'finish'){ %>
+  <a href="#" class="action-check"><i class="icon-ok"></i></a>
+  <a href="#" class="text-checked"><%- task.name %></a>
+
+  <% }else{ %>
+  <a href="#" class="action-check"><i class="icon-minus"></i></a>
+  <a href="#" class="text-check"><%- task.name %></a>
+  <% }%>
+
+
+  <a href="#" class="comment-check">0 <i class="icon-comment"></i></a>
+
+</li>

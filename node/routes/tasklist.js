@@ -126,7 +126,31 @@ exports.list = function(req,res){
             res.send(result);
         
         });
+    	
+}
 
+exports.task_by_id = function(req,res){
+	
+	if(req.params.id !== undefined ){	
+
+	    Tasklist
+	        .findOne({ _id: req.params.id})
+	        .sort('-created_at')
+	        .select('_id name description tasks')
+	        .populate({
+	            path    : 'tasks',
+	            select  : '_id tasklist name description status priority created_at updated_at',
+	            match	: { status: 'pending'},
+	            options : { sort: [['created_at', -1 ]] }
+	          })
+	        .exec(function (err, result) {
+	            
+	          if (err) return handleError(err);
+
+	            res.send(result);
+	        
+	        });
+	}
     	
 }
 
