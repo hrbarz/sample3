@@ -78,18 +78,94 @@ body {
   color: white;
 }
 
-.home-list-task ul, .tasklist-list-task ul{
+.home-list-task ul, 
+.tasklist-list-task ul{
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.home-list-task .items-tasklist, .tasklist-list-task .items-tasklist{
+.home-list-task .items-tasklist, 
+.tasklist-list-task .items-tasklist{
   padding-left: 7px;
   list-style: none;
   border-bottom: 1px solid #C8B16C;
   padding-top:20px;
 }
+
+.edith-task .items-tasklist{
+  padding-left: 0px;
+  padding-top: 5px;
+} 
+
+.edith-task .items-tasklist a{
+  font-size: 21px;
+  color:white;
+}
+.edith-task .items-tasklist a:hover{
+  text-decoration: none;
+  color:white;
+}
+
+.edith-task .block-edit-task{
+  clear: both;
+  background: #EFEFEF;
+  padding: 0px 20px 27px 20px;
+
+}
+
+.edith-task .block-edit-task .status a{
+
+  display:block; 
+  background:#D94436; 
+  color:white; 
+  padding:5px 10px 5px 12px;
+
+}
+
+.edith-task .block-edit-task .title{
+  
+  padding-bottom: 5px;
+  margin-bottom: 1px;
+  padding-top: 30px;
+} 
+.edith-task .block-edit-task .title textarea{
+
+  color: #999;
+  font-size: 22px;
+  background: none;
+  border: none;
+  /*border-bottom: 2px dashed #999;*/
+  display: block;
+  width: 100%;
+  line-height: 25px;
+  padding: 0;
+  padding-top: 4px;
+  height:22px;
+  /*outline:0px none transparent;
+  -moz-appearance:none;
+  outline-offset: 0;*/
+  resize: none; 
+}
+
+.edith-task .block-edit-task .description{
+  padding-bottom: 5px;
+} 
+
+.edith-task .block-edit-task .description textarea{
+  background: none;
+  border: none;
+  color: #0094D5;
+  font-size: 14px;
+  line-height: 16px;
+  padding-bottom: 5px;
+  width: 100%;
+  padding: 0;
+  resize: none;
+
+} 
+
+
 
 .home-list-task h2, .tasklist-list-task h2{
   font-family: Tahoma;
@@ -99,6 +175,9 @@ body {
 
 .home-list-task h2 a, .tasklist-list-task h2 a{
   color: white;
+}
+.home-list-task h2 a:hover, .tasklist-list-task h2 a:hover{
+  text-decoration: none;
 }
 
 .home-list-task-pending{
@@ -125,6 +204,15 @@ body {
   text-align: center;
   line-height: 15px; 
   vertical-align:middle;
+}
+
+.home-list-task-pending .mini li{
+    font-size: 16px;
+    line-height: 10px; 
+    padding: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
 }
 
 #collapseMenu{
@@ -165,6 +253,11 @@ body {
   color: white;
 }
 
+.pbX{
+  border: 2px solid #A8A8A8;
+  background: #EFEFEF;
+}
+
 .pb3{
   border: 2px solid #F78888;
   background: #FDE3E3;
@@ -189,6 +282,7 @@ body {
   margin-top:20px;
   padding: 15px;
 }
+
 
 .block-priority .new-task-block{
   border: none;

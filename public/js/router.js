@@ -5,11 +5,13 @@ define([
   'backbone',
 	'vm'
 ], function ($, _, Backbone, Vm) {
+  
   var AppRouter = Backbone.Router.extend({
     routes: {
       ''              : 'viewPageHome',
       'home'          : 'viewPageHome',
-      'tasklist/:id'  : 'viewPageTasklist'
+      'tasklist/:id'  : 'viewPageTasklist',
+      'task/:id'      : 'viewPageTask'
     }
   });
 
@@ -42,6 +44,20 @@ define([
       });
     
     });
+
+
+    router.on('route:viewPageTask', function (id) {
+      
+      require(['views/taskView'], function (ViewPage) {
+      
+        var viewPage = Vm.create(appView, 'ViewPage', ViewPage);
+      
+        viewPage.render(id);
+
+      
+      });
+    
+    });    
 
 
     

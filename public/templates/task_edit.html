@@ -1,0 +1,15 @@
+              <div class="status" style="width:100px; position:relative;float:right; right:-20px;"><a href="#"><i class="icon-minus icon-white"></i><% if(task.status == 'finish'){ %> Finished <% }else{ %> Pending <% }%></a></a></div>
+              
+              <div class="title" style=""><textarea placeholder="Title.." ><%- task.name %></textarea></div>
+              
+              <div class="description" style="clear:both">
+                <textarea placeholder="Add description.." ><%- task.description %></textarea>
+              </div>
+
+              <div class="action">
+
+                  <button style="padding:6px 16px 6px 10px; border:0; background:#009999; color:white; margin-top:6px"><i class="icon-thumbs-up icon-white"></i> update changes</button>
+
+                  <button style="padding:6px 16px 6px 10px; border:0; background:#353B1A; color:white; margin-top:6px"><i class="icon-arrow-left icon-white"></i> back</button>
+
+              </div>

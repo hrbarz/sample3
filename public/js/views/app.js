@@ -22,6 +22,8 @@ define([
 
       $.ajaxSetup({ cache: false });
 
+     
+
       Bootstrap.initialize();
 
 

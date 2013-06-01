@@ -13,8 +13,9 @@ require.config({
 
     //vendors
     timeago     : 'vendor/jquery.timeago',
-    url2link    : 'vendor/jquery.url2link'
-
+    url2link    : 'vendor/jquery.url2link',
+    autosize    : 'vendor/jquery.autosize-min'
+    
   },
 
   urlArgs : "bust="+new Date().getTime()

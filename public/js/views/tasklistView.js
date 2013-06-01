@@ -13,7 +13,7 @@ define([
         var taskCollection = new TaskCollection();
         var tasklistCollection = new TasklistCollection();
 
-        var Home = Backbone.View.extend({
+        var Tasklist = Backbone.View.extend({
 
             el: '#container',
             el_list_task: '#list-task-home',
@@ -46,8 +46,6 @@ define([
 
             set_data_list_task: function(data, idtasklist){
 
-                console.log(data)
-
                 _.each(data,function(task){
 
                     $('.pb' + task.priority + ' .list-task-unchecked').append( _.template(tasklistItemTemplate,{task: task}) );                                       
@@ -69,8 +67,6 @@ define([
                         }
                 
                     });               
-
-                    console.log(data);
 
                     _.each(data,function(task){
 
@@ -102,6 +98,6 @@ define([
 
        });
 
-       return Home;
+       return Tasklist;
 
 });

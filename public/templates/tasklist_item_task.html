@@ -1,14 +1,7 @@
 <li>                  
-  <% if(task.status == 'finish'){ %>
-  <a href="#" class="action-check"><i class="icon-ok"></i></a>
-  <a href="#" class="text-checked"><%- task.name %></a>
+  <a href="#" class="action-check"><i <% if(task.status == 'finish'){ %>class="icon-ok"  <% }else{ %> class="icon-minus" <% }%> ></i></a>
 
-  <% }else{ %>
-  <a href="#" class="action-check"><i class="icon-minus"></i></a>
-  <a href="#" class="text-check"><%- task.name %></a>
-  <% }%>
-
-
-  <a href="#" class="comment-check">0 <i class="icon-comment"></i></a>
-
+  <a href="#task/<%- task._id %>" <% if(task.status == 'finish'){ %> class="text-checked" <% }else{ %> class="text-check" <% }%> ><%- task.name %></a>
+  
+  <!--a href="#" class="comment-check">0 <i class="icon-comment"></i></a -->
 </li>
