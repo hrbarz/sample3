@@ -4,21 +4,26 @@ define([
     'backbone',
     'collections/task',
     'collections/tasklist',
+    'models/task',
     'text!templates/tasklist.html',
     'text!templates/home_tasks.html',
     'text!templates/tasklist_item_task.html'
 
-    ], function($,_,Backbone,TaskCollection,TasklistCollection,tasklistTemplate,homeTasksTemplate,tasklistItemTemplate) {
+    ], function($,_,Backbone,TaskCollection,TasklistCollection,TaskModel,tasklistTemplate,homeTasksTemplate,tasklistItemTemplate) {
 
         var taskCollection = new TaskCollection();
         var tasklistCollection = new TasklistCollection();
 
         var Tasklist = Backbone.View.extend({
 
+            id: 0 ,
+
             el: '#container',
             el_list_task: '#list-task-home',
 
             events: {
+
+                "keypress .insert_task" : "insert_task"
 
             },
 
@@ -28,6 +33,8 @@ define([
             },
 
             render: function (idtasklist){
+
+                this.id = idtasklist;
 
                 var that = this;
 
@@ -66,17 +73,17 @@ define([
                           $('.pb' + n+ ' .btn-task-checked').html('');
                         }
                 
-                    });               
+                    });
 
                     _.each(data,function(task){
-
-                      //$('#accordion_'+ task.tasklist + '_' + task.priority + ' .checked')
                       
                       $('.pb' + task.priority + ' .list-task-checked').append( _.template(tasklistItemTemplate,{task: task, _:_}) );
 
-                    });
-                
+                    });              
                 });
+
+                $('.block-priority').fadeIn(200);
+
                 
             },
 
@@ -89,6 +96,46 @@ define([
                       $('#tasklist_'+ idtasklist + ' .p'+ i ).html(data.count[i]);
 
                   };  
+
+                });
+
+            },
+
+            insert_task: function(e){
+
+                var that = this;
+
+                if (e.keyCode != 13) 
+                    return; 
+
+                var
+                text = $(e.target).val() ,
+                priority = $(e.target).data('priority'),
+                data = {},
+                task;
+
+                data.name = text;
+
+                data.tasklist = this.id;
+
+                data.priority = priority;
+
+                data.description = '';
+
+                data.tags = window.get_hash_tags_text(data.name);
+
+                
+                task = new TaskModel(); 
+
+                task.save(data, {
+                   
+                    success: function (task) {
+
+                        that.reload_count_priority(that.id);
+
+                        $('.pb' + priority + ' .list-task-unchecked').prepend( _.template(tasklistItemTemplate,{task: task.toJSON()}) );
+                        
+                    }
 
                 });
 

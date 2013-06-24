@@ -1,4 +1,4 @@
-function get_hash_tags_text(text){
+window.get_hash_tags_text = function(text){
 	
 	var a, b, c, d;
 

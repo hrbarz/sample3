@@ -36,7 +36,7 @@ define([
 
                   _.each(data.count,function(val,key){
 
-                      $('#home_'+key).html(val)
+                      $('#home_'+key).html(val);
 
                   });
 
