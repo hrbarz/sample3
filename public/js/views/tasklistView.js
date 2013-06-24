@@ -114,6 +114,8 @@ define([
                 data = {},
                 task;
 
+                $(e.target).val('');
+
                 data.name = text;
 
                 data.tasklist = this.id;
